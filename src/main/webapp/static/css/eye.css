@@ -1,0 +1,111 @@
+/* Input style */
+.form-group {
+
+  height: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  position: relative;
+}
+
+.form-control-lg {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 30px !important;
+  padding-right: 40px !important;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  letter-spacing: 5px;
+}
+
+.form-control-black {
+  background: #1A3324; /* Dark green alternative */
+  color: #5AC27D; /* Soft green text */
+}
+
+/* Icons and transition background */
+.transition-container {
+  position: relative;
+  --duration: 200ms; /* Set duration in ms, js uses it */
+}
+
+.icon-eye {
+  width: 20px; /* $eye_w */
+  height: 24px; /* $eye_h */
+  position: absolute;
+  right: 10px; /* $spacing_x */
+  top: 54%;
+  transform: translate(0, -50%);
+  /* Center horizontally relative to transition background */
+  color: #5AC27D; /* $color */
+}
+
+.icon-eye:hover {
+  cursor: pointer;
+}
+
+
+
+.transition-bg {
+  width: 30px; /* $transiton_bg_w */
+  height: 30px; /* $transiton_bg_w */
+  position: absolute;
+  right: 6px; /* $spacing_x */
+  top: 54%;
+
+  margin-top: calc(-24px / 2); /* Center vertically */
+  background: white;
+  border-radius: 50%;
+  transform-origin: right center;
+  transition: all var(--duration, 200ms) ease-in, border-radius 0.1s var(--duration, 200ms) ease-in;
+}
+
+.icon-lock {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  transition: all var(--duration, 200ms) ease-in, border-radius 0.1s var(--duration, 200ms) ease-in;
+  left: 10px;
+  top: 54%;
+  transform: translate(0, -50%);
+  color: white;
+}
+
+
+.js-show-pw .transition-bg {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  right: 0;
+  border-radius: 25px; /* $border_r */
+  transition: all var(--duration, 200ms) ease-in, border-radius 0.1s ease-in;
+}
+
+.js-show-pw .icon-lock {
+  z-index: 3;
+  position: absolute;
+  color: black;
+}
+
+.js-show-pw .icon-lock,
+.js-show-pw .icon-eye {
+  z-index: 5;
+}
+
+/* Show input when show password status */
+.show-input {
+    display: block;
+  z-index: 3;
+  background: white;
+  letter-spacing: 5px;
+}
+
+/* Utility classes */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,136 @@
+/* Apply general body styling for alignment */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7; /* Subtle background */
+    font-family: Arial, sans-serif;
+}
+
+/* Login form container */
+.login-form {
+    background: #ffffff; /* White card background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 30px;
+    width: 100%;
+    max-width: 400px; /* Limit max size */
+}
+
+/* Login heading */
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333; /* Dark text */
+}
+
+/* Labels styling */
+.login-form label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555; /* Medium text */
+}
+
+/* Input fields styling */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    color: #5AC27D; /* $color */
+    letter-spacing: 5px;
+}
+
+/* Focus effect for inputs */
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    outline: none;
+}
+
+/* Remember me checkbox */
+.login-form .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Checkbox styling */
+.login-form .remember-me input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Submit button styling */
+.login-form button[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Submit button hover effect */
+.login-form button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Wrapper for remember-me to ensure proper alignment */
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between toggle and text */
+}
+
+/* Hide the default checkbox */
+.remember-me input[type="checkbox"] {
+    display: none;
+}
+
+/* Label styled as a toggle switch */
+.remember-me label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    margin-left: 200px;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Circle inside the toggle switch */
+.remember-me label::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Toggle ON state */
+.remember-me input[type="checkbox"]:checked + label {
+    background-color: #4CAF50; /* Green toggle */
+}
+
+/* Move the circle to the right when ON */
+.remember-me input[type="checkbox"]:checked + label::after {
+    transform: translateX(25px);
+}

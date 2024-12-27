@@ -1,0 +1,137 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>com.secure_web.filters.AuthFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/messageBoard.jsp</url-pattern>
+    <url-pattern>/welcome.jsp</url-pattern>
+    <url-pattern>/profileAddServlet</url-pattern>
+    <!-- Add any other URLs you want to protect -->
+  </filter-mapping>
+
+  <!-- Servlet for Login -->
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet for VerifyOtp -->
+  <servlet>
+    <servlet-name>VerifyOtpServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.VerifyOtpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerifyOtpServlet</servlet-name>
+    <url-pattern>/verifyOtp</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet for ResendOtp -->
+  <servlet>
+    <servlet-name>ResendOtpServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.ResendOtpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendOtpServlet</servlet-name>
+    <url-pattern>/resendOtp</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet for Message Board -->
+  <servlet>
+    <servlet-name>MessagePanelServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.MessagePanelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessagePanelServlet</servlet-name>
+    <url-pattern>/messageBoard</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet for Profile Picture Upload -->
+  <servlet>
+    <servlet-name>ProfileAddServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.ProfileAddServlet</servlet-class>
+    <multipart-config>
+      <max-file-size>2097152</max-file-size> <!-- Max file size (2MB in this example) -->
+      <max-request-size>4194304</max-request-size> <!-- Max request size (4MB in this example) -->
+      <file-size-threshold>0</file-size-threshold> <!-- Threshold for storing files temporarily -->
+    </multipart-config>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ProfileAddServlet</servlet-name>
+    <url-pattern>/profileAdd</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProfileAddAPIServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.ProfileAddAPIServlet</servlet-class>
+    <multipart-config>
+      <max-file-size>10485760</max-file-size> <!-- 10 MB limit -->
+      <max-request-size>20971520</max-request-size> <!-- 20 MB limit -->
+      <file-size-threshold>0</file-size-threshold> <!-- No threshold -->
+    </multipart-config>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ProfileAddAPIServlet</servlet-name>
+    <url-pattern>/api/profile/add</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Servlet for Logout -->
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ConnectionTesterServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.ConnectionTesterServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ConnectionTesterServlet</servlet-name>
+    <url-pattern>/connectionTester</url-pattern>
+  </servlet-mapping>
+  <!-- Welcome Page -->
+  <servlet>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/welcomeUser</url-pattern>
+    <url-pattern>/welcomeModerator</url-pattern>
+    <url-pattern>/welcomeAdmin</url-pattern>
+
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProfileRemoveServlet</servlet-name>
+    <servlet-class>com.secure_web.servlets.ProfileRemoveServlet</servlet-class>
+  </servlet>
+
+  <!-- Servlet mapping -->
+  <servlet-mapping>
+    <servlet-name>ProfileRemoveServlet</servlet-name>
+    <url-pattern>/profileRemoveServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- Default Welcome File -->
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

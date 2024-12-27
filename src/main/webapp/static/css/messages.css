@@ -1,0 +1,108 @@
+/* Specific styling for Message Board */
+
+/* Title styling */
+h1 {
+    color: #4CAF50; /* Green for the title */
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Search form styling */
+form[action="messageboard"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form[action="messageboard"] input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form[action="messageboard"] button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form[action="messageboard"] button:hover {
+    background-color: #45a049;
+}
+
+/* Message list styling */
+ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
+}
+
+ul li {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+ul li strong {
+    color: #4CAF50;
+}
+
+ul li em {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Post message form styling */
+form[action="messageboard"][method="post"] {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form[action="messageboard"][method="post"] textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form[action="messageboard"][method="post"] button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form[action="messageboard"][method="post"] button:hover {
+    background-color: #45a049;
+}
+
+/* Logout button styling */
+form[action="logout"] button {
+    background-color: #f44336; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+form[action="logout"] button:hover {
+    background-color: #d32f2f;
+}

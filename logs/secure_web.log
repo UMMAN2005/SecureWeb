@@ -1,0 +1,21 @@
+2024-12-07 01:13:01 - User admin logged in successfully
+2024-12-11 17:05:47 - User admin logged in successfully
+2024-12-11 17:09:09 - User admin logged in successfully
+2024-12-11 17:26:34 - User admin logged in successfully
+2024-12-11 17:44:00 - Database error: Unknown column 'password_hash' in 'field list'
+2024-12-11 17:44:11 - Database error: Unknown column 'password_hash' in 'field list'
+2024-12-11 17:51:06 - User admin logged in successfully
+2024-12-11 17:51:27 - User admin uploaded a new profile picture: 4dbcaa52-57d3-4b50-8711-fabff21db84e.jpg
+2024-12-11 18:00:13 - Failed login attempt for username: admin
+2024-12-11 18:00:39 - Failed login attempt for username: admin
+2024-12-11 18:00:59 - Failed login attempt for username: admin
+2024-12-11 18:01:04 - User admin is locked out due to too many failed login attempts.
+2024-12-11 18:02:20 - User admin is locked out due to too many failed login attempts.
+2024-12-11 23:28:09 - User admin logged in successfully.
+2024-12-12 11:36:35 - User admin logged in successfully.
+2024-12-12 11:39:13 - User admin uploaded a new profile picture: 67038e26-9e83-47b4-88c7-4c72a439985e.png
+2024-12-12 11:42:58 - User admin logged in successfully.
+2024-12-12 11:54:11 - User admin logged in successfully.
+2024-12-12 14:05:36 - User admin logged in successfully.
+2024-12-12 14:16:04 - User admin logged in successfully.2024-12-12 15:01:29 - Error during login process.2024-12-12 15:23:57 - User admin logged in successfully.
+2024-12-12 15:24:23 - User admin uploaded a new profile picture: 9e7dd073-9e71-445b-8ecd-251a82a3a672.png
