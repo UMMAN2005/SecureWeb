@@ -123,11 +123,12 @@ public class ProfileAddServlet extends HttpServlet {
         }
 
         // Redirect to the welcome page after successful upload
-        response.sendRedirect("welcome");
+        response.sendRedirect("welcomeAdmin");
     }
 
     private boolean scanForMalware(Part filePart) throws IOException {
-        String apiKey = "6cc519a4174088fa74339339cd362529c2825a2a86b73bda12e00c87a29553d3";
+        Dotenv dotenv = Dotenv.load();
+        String apiKey = dotenv.get("VIRUSTOTAL_API_KEY");
         URL url = new URL("https://www.virustotal.com/api/v3/files");
 
         // Convert the uploaded file to InputStream

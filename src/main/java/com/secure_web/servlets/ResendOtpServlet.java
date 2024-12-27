@@ -47,12 +47,42 @@ public class ResendOtpServlet extends HttpServlet {
         return String.format("%06d", random.nextInt(1000000)); // Generate 6-digit OTP
     }
 
+//    private void sendEmail(String otp, String recipientEmail) throws MessagingException {
+//        Dotenv dotenv = Dotenv.load();
+//        String host = "smtp-relay.brevo.com";
+//        String port = "587";
+//        String senderEmail = dotenv.get("EMAIL_USERNAME");
+//        String senderPassword = dotenv.get("EMAIL_PASSWORD");
+//
+//        Properties properties = new Properties();
+//        properties.put("mail.smtp.auth", "true");
+//        properties.put("mail.smtp.starttls.enable", "true");
+//        properties.put("mail.smtp.host", host);
+//        properties.put("mail.smtp.port", port);
+//
+//        Session session = Session.getInstance(properties, new Authenticator() {
+//            @Override
+//            protected PasswordAuthentication getPasswordAuthentication() {
+//                return new PasswordAuthentication(senderEmail, senderPassword);
+//            }
+//        });
+//
+//        Message message = new MimeMessage(session);
+//        message.setFrom(new InternetAddress(senderEmail));
+//        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
+//        message.setSubject("Your OTP Code");
+//        message.setText("Your OTP code is: " + otp);
+//
+//        Transport.send(message);
+//        logger.info("OTP sent to {}", recipientEmail);
+//    }
+
     private void sendEmail(String otp, String recipientEmail) throws MessagingException {
         Dotenv dotenv = Dotenv.load();
-        String host = "smtp-relay.brevo.com";
-        String port = "587";
-        String senderEmail = dotenv.get("EMAIL_USERNAME");
-        String senderPassword = dotenv.get("EMAIL_PASSWORD");
+        String host = "smtp.gmail.com"; // Gmail's SMTP server
+        String port = "587"; // SMTP port for TLS
+        String senderEmail = dotenv.get("GMAIL_USERNAME"); // Update environment variable
+        String senderPassword = dotenv.get("GMAIL_PASSWORD"); // Update environment variable
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -60,6 +90,7 @@ public class ResendOtpServlet extends HttpServlet {
         properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.port", port);
 
+        // Create session with Gmail SMTP server
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -67,14 +98,15 @@ public class ResendOtpServlet extends HttpServlet {
             }
         });
 
+        // Compose email
         Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress(senderEmail));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
         message.setSubject("Your OTP Code");
         message.setText("Your OTP code is: " + otp);
 
+        // Send email
         Transport.send(message);
         logger.info("OTP sent to {}", recipientEmail);
     }
-
 }
